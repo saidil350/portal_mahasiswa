@@ -21,9 +21,10 @@ interface Mahasiswa {
 interface SearchFilterProps {
   mahasiswa: Mahasiswa[]
   onFilteredData: (filteredData: Mahasiswa[]) => void
+  filteredData?: Mahasiswa[]
 }
 
-export function SearchFilter({ mahasiswa, onFilteredData }: SearchFilterProps) {
+export function SearchFilter({ mahasiswa, onFilteredData, filteredData }: SearchFilterProps) {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedJurusan, setSelectedJurusan] = useState<string>('all')
   const [selectedSemester, setSelectedSemester] = useState<string>('all')
@@ -127,6 +128,7 @@ export function SearchFilter({ mahasiswa, onFilteredData }: SearchFilterProps) {
             Hapus Filter
           </Button>
         </div>
+
 
         {/* Filter Summary */}
         {(searchTerm || selectedJurusan !== 'all' || selectedSemester !== 'all') && (

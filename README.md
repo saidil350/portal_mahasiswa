@@ -7,6 +7,7 @@ Aplikasi CRUD (Create, Read, Update, Delete) untuk mengelola data mahasiswa meng
 - ✅ **CRUD Lengkap**: Create, Read, Update, Delete data mahasiswa
 - 🔍 **Search & Filter**: Pencarian berdasarkan nama, NIM, email, jurusan
 - 🎯 **Filter Advanced**: Filter berdasarkan jurusan dan semester
+- 🖨️ **Print & Export**: Print document, export CSV, export TXT
 - 🎨 **UI Modern**: Menggunakan shadcn/ui dengan desain yang clean
 - 📱 **Responsive**: Tampilan yang optimal di desktop dan mobile
 - 🗄️ **Database**: Menggunakan Prisma dengan SQLite
@@ -36,7 +37,10 @@ portal_mahasiswa/
 ├── components/            # React components
 │   ├── ui/               # shadcn/ui components
 │   ├── mahasiswa-form.tsx # Form untuk create/edit
-│   └── mahasiswa-table.tsx # Tabel data mahasiswa
+│   ├── mahasiswa-table.tsx # Tabel data mahasiswa
+│   ├── search-filter.tsx # Komponen search dan filter
+│   ├── export-options.tsx # Komponen print dan export
+│   └── print-mahasiswa.tsx # Komponen print (legacy)
 ├── lib/                   # Utility functions
 │   ├── prisma.ts         # Prisma client
 │   └── utils.ts          # Utility functions

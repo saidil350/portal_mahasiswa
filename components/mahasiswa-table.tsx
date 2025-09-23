@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Edit, Trash2, Plus } from 'lucide-react'
 import { MahasiswaForm } from './mahasiswa-form'
 import { SearchFilter } from './search-filter'
+import { ExportOptions } from './export-options'
 
 interface Mahasiswa {
   id: number
@@ -119,8 +120,16 @@ export function MahasiswaTable({ mahasiswa, onRefresh }: MahasiswaTableProps) {
     <>
       <SearchFilter 
         mahasiswa={mahasiswa} 
-        onFilteredData={setFilteredMahasiswa} 
+        onFilteredData={setFilteredMahasiswa}
+        filteredData={filteredMahasiswa}
       />
+      
+      {filteredMahasiswa.length > 0 && (
+        <ExportOptions 
+          mahasiswa={filteredMahasiswa} 
+          title="Daftar Mahasiswa - Portal Mahasiswa"
+        />
+      )}
       
       <Card>
         <CardHeader>
